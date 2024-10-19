@@ -1,0 +1,69 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}    
+<!-- Hero Section --> 
+<header class="hero text-white text-center py-5 mt-5" style="background: url('{% static 'blog/hero.png' %}') no-repeat center/cover; height: 90vh;">
+    <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="display-4">Welcome to Kuza Ndoto Academy</h1>
+        <p class="lead">Empowering dreams and transforming futures through mentorship, career guidance, and personal growth opportunities. Join us and unlock your full potential!</p>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'about' %}" class="btn btn-brand btn-lg me-3">Learn More</a>
+            <a href="{% url 'list_posts' %}" class="btn btn-outline-light btn-lg">Explore Our Articles</a> 
+        </div>
+        <div class="mt-4 badges-container"> 
+            <span class="badge badge-brand">Innovative Learning</span>
+            <span class="badge badge-brand">Expert Guidance</span>
+            <span class="badge badge-brand">Robust Community</span>
+        </div>
+    </div>
+  </header>
+
+  <!-- Programs Section -->
+  <section class="programs py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Explore Our Programs</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="{% static 'blog/academics.png' %}" class="card-img-top" alt="Learning and Academics">
+            <div class="card-body">
+              <h5 class="card-title">Learning & Academics</h5>
+              <p class="card-text">Empowering learners with foundational knowledge and critical thinking skills to excel in their academic pursuits and future careers.</p>
+              <a href="#" class="btn btn-brand">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="{% static 'blog/financial-literacy.png' %}" class="card-img-top" alt="Financial Literacy">
+            <div class="card-body">
+              <h5 class="card-title">Financial Literacy</h5>
+              <p class="card-text">Equipping individuals with essential financial skills to manage their resources effectively and make informed decisions for a secure future.</p>
+              <a href="#" class="btn btn-brand">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="{% static 'blog/careers.png' %}" class="card-img-top" alt="Career Navigation">
+            <div class="card-body">
+              <h5 class="card-title">Career Navigation</h5>
+              <p class="card-text">Guiding students through their career paths with insights, mentorship, and practical tools to succeed in the dynamic job market.</p>
+              <a href="#" class="btn btn-brand">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section class="cta text-center py-5" style="background: url('{% static 'blog/action.png' %}') no-repeat center/cover; height: 60vh; position: relative; overflow: hidden;">
+    <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+        <h2>Take the First Step Toward Success</h2>
+        <p>Begin your journey with Kuza Ndoto Academy and start unlocking your potential.</p>
+        <a href="#" class="btn btn-brand btn-lg mt-3">Join Now</a>
+    </div>
+    <div class="background-blur"></div> <!-- This is to apply the blur effect -->
+  </section>
+{% endblock %}

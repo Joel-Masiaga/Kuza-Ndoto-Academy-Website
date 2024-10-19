@@ -1,0 +1,307 @@
+/* Global Styles */
+:root {
+    --brand-color: #00878D;
+    --brand-hover-color: #006f74;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--brand-hover-color);
+}
+
+/* Logo */
+.logo-img {
+    height: 65px;
+    margin-right: 0px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--background-color); 
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--brand-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--brand-color);
+}
+
+.btn-outline-brand {
+    border-color: var(--brand-color);
+    color: var(--brand-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 6px;
+}
+
+.btn-outline-brand:hover {
+    background-color: var(--brand-color);
+    color: #fff;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    padding: 7rem 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.hero h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.badges-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.badge-brand {
+    background-color: var(--background-color);
+    color: var(--brand-color);
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--brand-color);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.badge-brand:hover {
+    background-color: var(--brand-color);
+    color: #fff;
+}
+
+/* Updated button styles */
+.btn-brand {
+    background-color: var(--brand-color);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-brand:hover {
+    background-color: var(--brand-hover-color);
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: var(--brand-color);
+}
+
+/* Programs Section */
+.programs h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CTA Section */
+.cta {
+    position: relative;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.cta h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    position: relative;
+}
+
+.cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.btn-brand {
+    background-color: var(--brand-color);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.btn-brand:hover {
+    background-color: var(--brand-hover-color);
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer a {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* Post List Page */
+.post-list {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+}
+
+.post-list h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.post-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    font-weight: 500;
+    color: var(--brand-color);
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--brand-hover-color);
+}
+
+
+/* Pagination */
+.pagination {
+    background-color: #00878D;
+    border-radius: 0.5rem; /* Optional: for rounded corners */
+}
+
+.page-item .page-link {
+    color: #333; /* Text color for links */
+    background-color: transparent; /* Default background */
+    border: none; /* Remove border for a clean look */
+}
+
+.page-item .page-link:hover {
+    color: #fff; /* White text on hover */
+    background-color:  #006f74; /* Hover background color */
+}
+
+.page-item.active .page-link {
+    color: #fff; /* White text for active page */
+    background-color: #00878D;; /* Active background color */
+}
+
+.page-item.active .page-link:hover {
+    background-color: #006f74; /* Hover effect for active link */
+}
+
+.page-item.disabled .page-link {
+    color: #ccc; /* Gray color for disabled links */
+    background-color: transparent; /* Keep background transparent */
+    pointer-events: none; /* Disable clicks */
+}

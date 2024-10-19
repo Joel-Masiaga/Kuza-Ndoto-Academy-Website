@@ -1,0 +1,68 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-5 pt-5">
+    <div class="bg-success text-light p-5 rounded shadow text-center" style="background-color: #00878D;">
+        <h1 class="display-4">About Kuza Ndoto Academy</h1>
+        <p class="lead">Empowering Dreams, Transforming Futures</p>
+    </div>
+    
+    <!-- Mission Statement -->
+    <div class="mt-5 p-4 bg-white rounded shadow text-center">
+        <h2 class="text-info">
+            <i class="bi bi-bullseye" style="color: #00878D;"></i> Our Mission
+        </h2>
+        <p>
+            At Kuza Ndoto Academy, our mission is to empower youths through mentorship, career guidance, and personal growth opportunities. We aim to provide a platform where dreams are nurtured, and futures are shaped.
+        </p>
+    </div>
+
+    <!-- Vision Statement -->
+    <div class="mt-4 p-4 bg-white rounded shadow text-center">
+        <h2 class="text-info">
+            <i class="bi bi-eye" style="color: #00878D;"></i> Our Vision
+        </h2>
+        <p>
+            We envision a world where every young person has the opportunity to realize their potential and pursue their passions. Through our programs, we aim to create a supportive community that fosters growth and development.
+        </p>
+    </div>
+
+    <!-- Core Values -->
+    <div class="mt-4 p-4 bg-white rounded shadow text-center">
+        <h2 class="text-info">
+            <i class="bi bi-stars" style="color: #00878D;"></i> Core Values
+        </h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <i class="bi bi-hand-thumbs-up" style="color: #00878D;"></i> Integrity
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-person-check" style="color: #00878D;"></i> Empowerment
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-people" style="color: #00878D;"></i> Collaboration
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-lightbulb" style="color: #00878D;"></i> Innovation
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-globe" style="color: #00878D;"></i> Inclusivity
+            </li>
+        </ul>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta text-center py-5" style="background: url('{% static 'blog/action.png' %}') no-repeat center/cover; height: 60vh; position: relative; overflow: hidden;">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+            <h2 class="text-light display-4">
+                <i class="bi bi-lightbulb-fill" style="color: #00878D;"></i> Take the First Step Toward Success
+            </h2>
+            <p class="text-light">Begin your journey with Kuza Ndoto Academy and start unlocking your potential.</p>
+            <a href="#" class="btn btn-light btn-lg mt-3" style="color: #00878D;">
+                <i class="bi bi-person-plus" style="color: #00878D;"></i> Join Now
+            </a>
+        </div>
+    </section>
+</div>
+{% endblock %}

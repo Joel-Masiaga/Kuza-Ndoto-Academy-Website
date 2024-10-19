@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Post Header with Background -->
+            <div class="text-center py-4 mb-4" style="background-color: var(--brand-color); color: white; border-radius: 8px;">
+                <!-- Post Title -->
+                <h2 class="mb-3">{{ post.title }}</h2>
+                <!-- Post Metadata (Author and Published Date) -->
+                <p class="mb-0">
+                    <i class="bi bi-person-fill me-1"></i><strong>{{ post.author }}</strong> | 
+                    <i class="bi bi-calendar-event me-1"></i>{{ post.date_posted |date:"F d, Y" }}
+                </p>
+            </div>
+
+            <!-- Post Description (Short Overview) -->
+            {% if post.description %}
+                <p class="text-center text-muted font-italic mb-4">
+                    <i class="bi bi-info-circle me-1"></i>{{ post.description }}
+                </p>
+            {% endif %}
+
+            <!-- Post Image -->
+            {% if post.image %} 
+                <div class="text-center mb-4">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded" style="max-height: 400px; object-fit: cover;">
+                </div>
+            {% endif %}
+
+            <!-- Post Content -->
+            <div class="post-content mb-5 p-3 bg-light rounded shadow-sm" style="line-height: 1.8; font-size: 1.1rem;">
+                {{ post.content|safe }}
+            </div>
+
+            <!-- Edit and Delete Options for Author -->
+            {% if post.author == user %}
+                <div class="text-center mb-4">
+                    <a href="{% url 'post_update' post.id %}" class="btn btn-warning me-2">
+                        <i class="bi bi-pencil-square"></i> Edit Post
+                    </a>
+                    <a href="{% url 'post_confirm_delete' post.id %}" class="btn btn-danger">
+                        <i class="bi bi-trash-fill"></i> Delete Post
+                    </a>
+                </div>
+            {% endif %}
+            
+            <!-- Divider -->
+            <hr class="my-5" style="border-top: 2px solid var(--brand-hover-color);">
+        </div>
+    </div>
+</div>
+{% endblock %}

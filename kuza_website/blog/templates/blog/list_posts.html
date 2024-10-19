@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<section class="post-list py-5">
+    <div class="container">
+        <h2 class="mb-4 text-center">Our Latest Blog Posts</h2>
+        <div class="row">
+            <!-- Loop through the posts and display each post's title, image, and excerpt -->
+            {% for post in page_obj.object_list %}  <!-- Use page_obj to get the current page's posts -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    {% if post.image %} <!-- Check if the post has an image -->
+                        <img src="{{ post.image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text">By {{ post.author }}</p> <!-- Display the author's name -->
+                        <a href="{% url 'post_detail' post.pk %}" class="btn btn-brand">Read More</a> 
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Published on {{ post.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-md-12 text-center">
+                <p>No posts available at the moment. Please check back later.</p>
+            </div>
+            {% endfor %}
+        </div> 
+
+        <!-- Pagination -->
+            <div class="d-flex justify-content-center">
+                {% if is_paginated %}
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page=1" aria-label="First">
+                                    <span aria-hidden="true">&laquo;&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                                    <span aria-hidden="true">&raquo;&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+
+    </div>
+</section>
+{% endblock %} 

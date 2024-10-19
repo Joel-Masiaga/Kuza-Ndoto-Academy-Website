@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Page Title -->
+            <h2 class="text-center mb-4 text-primary">Create Your Account</h2>
+
+            <!-- Content Section (Themed Form) -->
+            <div class="content-section p-4 border rounded shadow-sm" style="background: linear-gradient(135deg, #00878D, #FF6831);">
+                <!-- Registration Form Start -->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Legend with a border-bottom for styling -->
+                    <fieldset class="form-group text-white">
+                        <legend class="border-bottom mb-4">Register</legend>
+                        
+                        <!-- Render the form fields using crispy forms for styling -->
+                        {{ form|crispy }}
+                    </fieldset>
+
+                    <!-- Submit Button with Custom Styling -->
+                    <div class="form-group text-center">
+                        <button class="btn btn-light btn-lg text-primary fw-bold" type="submit" style="border: 2px solid #00878D;">
+                            Register
+                        </button>
+                    </div>
+
+                    <!-- Additional Link to Login -->
+                    <div class="text-center mt-3">
+                        <p class="text-white">Already have an account? <a href="{% url 'login' %}" class="text-light fw-bold">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
